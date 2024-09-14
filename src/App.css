@@ -1,38 +1,44 @@
+/* App.css */
 .App {
+  display: grid;
+  grid-template-columns: 1fr; /* One column layout */
+  grid-template-rows: auto 50px 1fr 50px; /* Defines the height for header, nav, main, and footer */
+  grid-template-areas: 
+    "header"
+    "nav"
+    "main"
+    "footer";
+  height: 100vh; /* Make sure the app covers full height */
+}
+
+/* Assigning grid areas to components */
+header {
+  grid-area: header;
+  background-color: #f7e6c4;
+  text-align: center;
+  padding: 10px;
+  color: red;
+  font-weight: normal;
+}
+
+nav {
+  grid-area: nav;
+  background-color: #f9f2d7;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+main {
+  grid-area: main;
+  background-color: #fff7e0;
+  text-align: center;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+footer {
+  grid-area: footer;
+  background-color: #f0e5c2;
+  text-align: center;
+  padding: 10px;
 }
